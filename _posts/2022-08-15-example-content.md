@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Example content
-lead: A long post that showcases style elements.
+lead:
 ---
 
 **Howdy!** This is an example blog post that shows several types of <abbr>html</abbr> content supported in this theme.

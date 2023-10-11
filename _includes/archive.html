@@ -1,12 +1,13 @@
-{% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
+{% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%d %m %Y'" %}
 
-<div class="archive">
-  {% for yearMonth in postsByYearMonth %}
-  <h2>{{ yearMonth.name }}</h2>
-  <ul>
-    {% for post in yearMonth.items %}
-    <li><a href="{{ post.url }}">{{ post.title }}.</a> <span class="lead">{{ post.lead }}</span></li>
+<div class="archive" style="text-align:center;">
+  <div style="display: inline-block; text-align: left;">
+    {% for yearMonth in postsByYearMonth %}
+    <ul>
+      {% for post in yearMonth.items %}
+      <li>{{ yearMonth.name }} <a href="{{ post.url }}">{{ post.title }}.</a> <span class="lead">{{ post.lead }}</span></li>
+      {% endfor %}
+    </ul>
     {% endfor %}
-  </ul>
-  {% endfor %}
+  </div>
 </div>
